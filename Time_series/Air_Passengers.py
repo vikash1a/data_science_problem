@@ -9,17 +9,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
 
-data=pd.read_csv('AirPassengers.csv')
+data=pd.read_csv('Time_series\AirPassengers.csv')
 
 dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m') 
-data = pd.read_csv('AirPassengers.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse) 
+data = pd.read_csv('Time_series\AirPassengers.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse) 
 
 ts=data['#Passengers']
-ts.index
+#ts.index
 
-ts['1949']
+#ts['1949']
 plt.plot(ts)
-plt.savefig('ts.png')
+#plt.savefig('ts.png')
 
 from statsmodels.tsa.stattools import adfuller
 
